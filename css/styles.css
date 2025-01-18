@@ -30,7 +30,7 @@ html
 
 body
 {
-    background-image: url("/src/color4bg_2025-01-16\ 23_31_18.png");
+    background-image: url("/src/backround-login.jpg");
 
     background-position: center center;
     background-repeat: no-repeat;
@@ -79,6 +79,7 @@ a
 h1
 {
     font-size: 4rem;
+    height: 6rem;
 }
 
 h2
@@ -93,45 +94,182 @@ p
     text-align: center;
 }
 
-.container
+.container-login-principal
 {
-    width: 100vw;
+    margin: 0 auto;
+    width: 93vw;
     height: 100vh;
     display: grid;
     place-content: center;
 }
 
 .container__login
-    {
-        margin: 0 auto;
-        width: 100%;
-        height: 50vh;
-        border-radius: 2rem;
-        box-shadow: 2px 4px 10px 4px var(--colorVino);
-
-        background-color: transparent;
-        backdrop-filter: blur(15px);
-
-        display: flex;
-        flex-direction: column;
-        justify-content: space-evenly;
-        overflow: hidden;
-    }
-
-
-@media (min-width: 576px) /*Desde aca empieza la vista escritorio*/
 {
+    margin: 0 auto;
+    width: 100%;
+    height: 100%;
+    border-radius: 2rem;
+    box-shadow: 2px 4px 10px 4px var(--colorVino);
 
+    background-color: transparent;
+    backdrop-filter: blur(15px);
+
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+}
+
+/* Mitades del contenedor login */
+.in-right,
+.in-left
+{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+
+.in-left
+{
+    margin: 2rem 0 5rem 0;
+}
+
+.in-right
+{
+    padding: 2rem;
+    background-color: var(--colorVino);
+}
+
+
+/* Formulario */
+.form__login
+{
+    margin-top: 1rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1.5rem;
+}
+
+/* Estilo general de Elementos del Formulario */
+.entry-form
+{
+    outline: none;
+    border: none 2px var(--colorVino);
+    box-shadow: 2px 2px 10px 2px var(--colorVino);
+    border-radius: 20rem;
+    padding: 1rem;
+}
+
+/* Estilo elemento por elemento del formulario */
+.input,
+.input::placeholder
+{
+    background-color: transparent;
+    color: var(--colorVino);
+    border-radius: 20rem;
+    transition: all .3s ease-in;
+}
+
+.input::placeholder
+{
+    color: #5d24218e;
+}
+
+:focus::-webkit-input-placeholder
+{
+    color: #fed6d683;
+}
+
+
+.input:active,
+.input:focus
+{
+    background-color: var(--colorVino);
+    color: var(--colorNudeClaro);
+    box-shadow: 2px 2px 10px 2px var(--colorVino);
+}
+
+
+/* Botón */
+.btn
+{
+    position: relative;
+    cursor: pointer;
+    width: 100%;
+    overflow: hidden;
+    background-color: var(--colorVino);
+    color: var(--colorVino);
+    transition: all 0.3s cubic-bezier(0.23, 1, 0.320, 1);
+    color: var(--colorNudeClaro);
+}
+
+.btn::before
+{
+    content: '';
+    position: absolute;
+    inset: 0;
+    margin: auto;
+    width: 50px;
+    height: 50px;
+    border-radius: inherit;
+    scale: 0;
+    z-index: -1;
+    background-color: var(--colorNudeClaro);
+    transition: all 0.7s cubic-bezier(0.23, 1, 0.320, 1);
+}
+
+
+.btn:hover::before
+{
+    scale: 5.2;
+}
+
+.btn:hover
+{
+    color: var(--colorVino);
+    scale: 1.1;
+    box-shadow: 2px 2px 10px 2px var(--colorNudeClaro);
+}
+
+.btn:active,
+.btn:focus
+{
+    color: var(--colorVino);
+    scale: 1.1;
+    box-shadow: 2px 2px 10px 2px var(--colorNudeClaro);
+}
+
+.olvidar
+{
+    text-decoration: none;
+    color: var(--colorVino);
+    margin: 1rem 0 0.5rem 0;
+    transition: all 0.3s ease-in;
+}
+
+.olvidar:focus,
+.olvidar:active,
+.olvidar:focus
+{
+    color: var(--colorMarronOscuro);
+    text-shadow: var(--colorVino) 1px 0 10px;
+}
+
+
+/*Desde aca empieza la vista escritorio*/
+@media (min-width: 576px)
+{
     .container__login
     {
         width: 70rem;
+        padding-bottom: 0;
 
-        display: flex;
+        height: 50vh;
+
         flex-direction: row;
-        justify-content: space-between;
-        overflow: hidden;
     }
-
 
     /* Mitades del contenedor login */
     .in-right,
@@ -140,144 +278,30 @@ p
         width: 50%;
         height: 100%;
         overflow: hidden;
-
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-
     }
 
+
+    .in-left
+    {
+        margin: 0
+    }
+
+
+    /*Forma del contenedor derecho*/
     .in-right
     {
-        padding: 2rem;
-        background-color: var(--colorVino);
         border-bottom-right-radius: 40%;
-        gap: 2.5rem;
     }
-
 
     /* Formulario */
     .form__login
     {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
         gap: 2.5rem;
-    }
-
-
-    /* Estilo general de Elementos del Formulario */
-    .entry-form
-    {
-        outline: none;
-        border: solid 2px var(--colorVino);
-        box-shadow: 2px 2px 10px 2px var(--colorVino);
-        border: none;
-        border-radius: 20rem;
-        position: relative;
-        padding: 1rem;
-    }
-
-
-    /* Estilo elemento por elemento del formulario */
-    .input,
-    .input::placeholder
-    {
-        background-color: transparent;
-        color: var(--colorVino);
-        border-radius: 20rem;
-        transition: all .3s ease-in;
-    }
-
-    .input::placeholder
-    {
-        color: #5d24218e;
-    }
-
-    :focus::-webkit-input-placeholder
-    {
-        color: #fed6d683;
-    }
-
-
-    .input:active,
-    .input:focus
-    {
-        background-color: var(--colorVino);
-        color: var(--colorNudeClaro);
-        box-shadow: 2px 2px 10px 2px var(--colorVino);
-    }
-
-
-    /* Botón */
-    .btn
-    {
-        position: relative;
-        cursor: pointer;
-        width: 100%;
-        overflow: hidden;
-        background-color: var(--colorVino);
-        color: var(--colorVino);
-        transition: all 0.3s cubic-bezier(0.23, 1, 0.320, 1);
-        color: var(--colorNudeClaro);
-    }
-
-    .btn::before
-    {
-        content: '';
-        position: absolute;
-        inset: 0;
-        margin: auto;
-        width: 50px;
-        height: 50px;
-        border-radius: inherit;
-        scale: 0;
-        z-index: -1;
-        background-color: var(--colorNudeClaro);
-        transition: all 0.7s cubic-bezier(0.23, 1, 0.320, 1);
-    }
-
-
-    .btn:hover::before
-    {
-        scale: 5.2;
-    }
-
-    .btn:hover
-    {
-        color: var(--colorVino);
-        scale: 1.1;
-        box-shadow: 2px 2px 10px 2px var(--colorNudeClaro);
-    }
-
-    .btn:active,
-    .btn:focus
-    {
-        color: var(--colorVino);
-        scale: 1.1;
-        box-shadow: 2px 2px 10px 2px var(--colorNudeClaro);
     }
 
     .olvidar
     {
-        text-decoration: none;
-        color: var(--colorVino);
         margin: -1rem 0 0;
-        transition: all 0.3s ease-in;
     }
-
-    .olvidar:focus,
-    .olvidar:active,
-    .olvidar:focus
-    {
-        color: var(--colorMarronOscuro);
-        text-shadow: var(--colorVino) 1px 0 10px;
-    }
-
-
-
-
-
-
 }
+
