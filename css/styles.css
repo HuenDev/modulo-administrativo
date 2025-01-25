@@ -1,3 +1,4 @@
+/*! VISTA GENERAL Y MOBILE*/
 /* Variables */
 :root
 {
@@ -45,11 +46,17 @@ a,
 input,
 button
 {
-    font-family: var(--fuentePrincipal);
+    font-family: var(--fuenteSecundaria);
     padding: 0;
     margin: 0;
 }
 
+a
+{
+    text-decoration: none;
+    display: block;
+
+}
 
 h1,
 h2,
@@ -65,21 +72,13 @@ button
     font-size: 2rem;
 }
 
-h1,
-p
-{
-    color: var(--colorNudeClaro);
-}
-
-a
-{
-    font-size: 1.2rem;
-}
-
 h1
 {
     font-size: 4rem;
     height: 6rem;
+    font-family: var(--fuentePrincipal);
+    padding: 0;
+    margin: 0;
 }
 
 h2
@@ -191,6 +190,12 @@ p
     box-shadow: 2px 2px 10px 2px var(--colorVino);
 }
 
+.in-right--title,
+.parrafo
+{
+    color: var(--colorNudeClaro);
+}
+
 
 /* Botón */
 .btn
@@ -201,8 +206,8 @@ p
     overflow: hidden;
     background-color: var(--colorVino);
     color: var(--colorVino);
-    transition: all 0.3s cubic-bezier(0.23, 1, 0.320, 1);
     color: var(--colorNudeClaro);
+    transition: all 0.3s cubic-bezier(0.23, 1, 0.320, 1);
 }
 
 .btn::before
@@ -243,6 +248,7 @@ p
 
 .olvidar
 {
+    font-size: 1.2rem;
     text-decoration: none;
     color: var(--colorVino);
     margin: 1rem 0 0.5rem 0;
@@ -258,6 +264,7 @@ p
 }
 
 
+/*! VISTA COMPUTADOR*/
 /*Desde aca empieza la vista escritorio*/
 @media (min-width: 576px)
 {
@@ -305,3 +312,135 @@ p
     }
 }
 
+
+/* _______________index.html_______________________________ */
+
+.container__index
+{
+    margin: 0 auto;
+    height: 100vh;
+    width: 100vw;
+
+    display: grid;
+    grid-auto-columns: 25% 75%;
+    grid-template-rows: 93% 7%;
+    grid-template-areas:
+        "contenedor-izquierdo contenedor-derecho"
+        "contenedor-final contenedor-final";
+}
+
+.container__izquierdo
+{
+
+    background-color: var(--colorVino);
+    padding: 2rem;
+    box-shadow: 2px 4px 10px 4px var(--colorVino);
+    border-bottom: solid 1px var(--colorNudeClaro);
+
+    grid-area: contenedor-izquierdo;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 5rem;
+
+}
+
+.container__derecho
+{
+    grid-area: contenedor-derecho;
+
+    padding: 2rem;
+}
+
+/* Footer */
+.container__inferior
+{
+    background-color: var(--colorVino);
+    box-shadow: 2px 4px 10px 4px var(--colorVino);
+
+
+    grid-area: contenedor-final;
+
+    place-content: center;
+}
+
+/* Navegación */
+.navegacion
+{
+    margin-top: 5rem;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 2rem;
+    text-align: center;
+}
+
+/* Ancors */
+
+.line
+{
+    border: solid 0.1px var(--colorNudeClaro);
+    width: 25%;
+    position: absolute;
+    left: 0;
+    top: 8rem;
+}
+
+.cabecera__logo
+{
+    font-size: 3.5rem;
+    color: var(--colorNudeClaro);
+    margin-bottom: 2rem;
+}
+
+.ancla
+{
+    font-size: 2rem;
+    color: var(--colorNudeClaro);
+}
+
+.ancla:focus
+{
+    text-shadow: var(--colorNudeClaro) 1px 0 10px;
+}
+
+/* Tooltip */
+.icon-configuracion .tooltiptext,
+.icon-salir .tooltiptext
+{
+    visibility: hidden;
+    padding: .8rem;
+    background-color: var(--ColorNegro);
+    color: var(--colorBlanco);
+    border-radius: 6px;
+
+    /* Position the tooltip */
+    position: absolute;
+    z-index: 1;
+}
+
+.icon-configuracion:hover .tooltiptext,
+.icon-salir:hover .tooltiptext
+{
+    visibility: visible;
+}
+
+.configuracion__admin
+{
+    text-align: center;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2rem;
+}
+
+.configuracion__admin__enlaces
+{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 2rem;
+}
